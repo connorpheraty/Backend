@@ -1,4 +1,4 @@
-#!/Users/connorheraty/Desktop/Repos/Build-Week/clinical_trial/eb-flask/virt/bin/python3
+#!/Users/connorheraty/Desktop/Repos/Build-Week/clinical-trial-finder-DS/eb-flask/virt/bin/python3
 
 import sys
 import json

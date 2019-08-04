@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/connorheraty/Desktop/Repos/Build-Week/clinical_trial/eb-flask/virt"
+VIRTUAL_ENV="/Users/connorheraty/Desktop/Repos/Build-Week/clinical-trial-finder-DS/eb-flask/virt"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

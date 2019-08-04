@@ -1,4 +1,4 @@
-#!/Users/connorheraty/Desktop/Repos/Build-Week/clinical_trial/eb-flask/virt/bin/python3
+#!/Users/connorheraty/Desktop/Repos/Build-Week/clinical-trial-finder-DS/eb-flask/virt/bin/python3
 
 # $Id: rst2odt.py 5839 2009-01-07 19:09:28Z dkuhlman $
 # Author: Dave Kuhlman <dkuhlman@rexx.com>

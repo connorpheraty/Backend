@@ -1,4 +1,4 @@
-#!/Users/connorheraty/Desktop/Repos/Build-Week/clinical_trial/eb-flask/virt/bin/python3
+#!/Users/connorheraty/Desktop/Repos/Build-Week/clinical-trial-finder-DS/eb-flask/virt/bin/python3
 
 # $Id: rst2xetex.py 7847 2015-03-17 17:30:47Z milde $
 # Author: Guenter Milde

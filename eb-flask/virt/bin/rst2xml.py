@@ -1,4 +1,4 @@
-#!/Users/connorheraty/Desktop/Repos/Build-Week/clinical_trial/eb-flask/virt/bin/python3
+#!/Users/connorheraty/Desktop/Repos/Build-Week/clinical-trial-finder-DS/eb-flask/virt/bin/python3
 
 # $Id: rst2xml.py 4564 2006-05-21 20:44:42Z wiemann $
 # Author: David Goodger <goodger@python.org>

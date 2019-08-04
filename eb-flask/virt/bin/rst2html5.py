@@ -1,4 +1,4 @@
-#!/Users/connorheraty/Desktop/Repos/Build-Week/clinical_trial/eb-flask/virt/bin/python3
+#!/Users/connorheraty/Desktop/Repos/Build-Week/clinical-trial-finder-DS/eb-flask/virt/bin/python3
 # -*- coding: utf8 -*-
 # :Copyright: © 2015 Günter Milde.
 # :License: Released under the terms of the `2-Clause BSD license`_, in short:
