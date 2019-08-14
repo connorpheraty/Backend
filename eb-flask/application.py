@@ -23,6 +23,9 @@ def root():
 
 @app.route('/fetch_data', methods=['POST'])
 def fetch_data():
+  """
+  API route that receives search query and returns clinical trials that match search
+  """
 
   data = request.get_json(force=True)
 
