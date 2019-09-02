@@ -4,8 +4,8 @@
 
 Clone the repo:
 
-```git clone https://github.com/build-week-072019-clinical-trial-finder/clinical-trial-finder-DS```
-
+```git clone https://github.com/build-week-072019-clinical-trial-finder/clinical-trial-finder-DS``` <br>
+```cd eb-flask```
 Create virtualenv:
 
 ```virtualenv virt``` <br>
