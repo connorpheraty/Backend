@@ -8,9 +8,9 @@ Clone the repo:
 
 Create virtualenv:
 
-```virtualenv virt```
-```source virt/bin/activate```
-```pip install -r requirements.txt```
+```virtualenv virt``` <br>
+```source virt/bin/activate``` <br>
+```pip install -r requirements.txt``` <br>
 
 Run the server locally:
 
