@@ -5,8 +5,6 @@ Before we get started, lets outline some of the goals for the Data Science Team:
 * Test the feasability of a predictive model that will be able to predict, with statistical significance, the probability of a trial reaching the completion stage.
 * A search engine that returns relevant clinical trials based upon a customer query.
 
-The repo is divided between the "Notebooks" folder and the "eb-flask" folder:
-
 ## [Flask API](https://github.com/build-week-072019-clinical-trial-finder/clinical-trial-finder-DS/tree/master/eb-flask)
 Contains the flask API which acts as Clinical Trial Finder's search engine.
 
