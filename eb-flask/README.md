@@ -20,6 +20,8 @@ Run the server locally:
 Try the endpoints:
 
 ```Post Request```
+```http://127.0.0.1:5000/fetch_data```
+
 ```
 {
   "user_search": "lung cancer trial new york"
