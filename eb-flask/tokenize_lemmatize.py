@@ -42,13 +42,13 @@ def tokenize_lemmatize(string, stop_words=stop_words):
   Tokenizes input string and removes stopwords
   """
 
-    tokens = gensim.utils.simple_preprocess(str(string), deacc=True)
+  tokens = gensim.utils.simple_preprocess(str(string), deacc=True)
 
-    tokens = [word for word in tokens if word not in stop_words]
+  tokens = [word for word in tokens if word not in stop_words]
 
-    #tokens_lemmatized = lemmatization(tokens, allowed_postags=['NOUN', 'ADJ', 'VERB', 'ADV'])
+  #tokens_lemmatized = lemmatization(tokens, allowed_postags=['NOUN', 'ADJ', 'VERB', 'ADV'])
 
-    return tokens
+  return tokens
 
 
 
