@@ -2,9 +2,8 @@
 
 The drug development process is in crisis. Returns on R&D have been decreasing for decades and fewer drugs are reaching the market. One contributing factor to this crisis is the lack of information transparency in the clinical trial market (a key part of the drug development process).
 
-An astounding 80% of clinical trials fail to meet recruitment timelines and 1 in 4 cancer research trials falter due to low patient recruitment. Many patients do not even know these trials exist.
+An astounding 80% of clinical trials fail to meet recruitment timelines and 1 in 4 cancer research trials falter due to low patient recruitment. As Lambda students we can develop a solution that increases information transparency and helps patients (and family members) evaluate potentially life-saving clinical trials. 
 
-As Lambda students we have developed a solution that increases information transparency and helps patients (and family members) evaluate potentially life-saving clinical trials. In the process, recruiting enough participants for the study to make.
 
 Goals for the Data Science Team:
 * Analyze data for actionable insights to pass on to our customers.
