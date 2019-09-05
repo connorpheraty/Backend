@@ -4,7 +4,7 @@ The drug development process is in crisis. Returns on R&D have been decreasing f
 
 An astounding 80% of clinical trials fail to meet recruitment timelines and 1 in 4 cancer research trials falter due to low patient recruitment. Many patients do not even know these trials exist.
 
-As Lambda students we have developed a solution that increases information transparency and helps patients (and family members) evaluate potentially life-saving clinical trials.
+We have developed a solution that increases information transparency and helps patients (and family members) evaluate potentially life-saving clinical trials.
 
 Goals for the Data Science Team:
 * Analyze data for actionable insights to pass on to our customers.
