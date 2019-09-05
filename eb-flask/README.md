@@ -24,7 +24,7 @@ Try the endpoints:
 
 ```
 {
-  "user_search": "lung cancer trial new york"
+  "user_search": "wound management australia"
 }
 ```
 
