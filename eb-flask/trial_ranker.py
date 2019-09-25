@@ -8,12 +8,12 @@ def token_counts(string, search):
   """
   Function that counts the number of times a user search term is mentioned in a given tokenized list
   """
-    counter = Counter(string.strip('[],"').split(','))
-    count = []
-    for key, val in counter.items():
-        if key.strip(" '") in search:
-            count.append(int(val))
-    return sum(count)    
+  counter = Counter(string.strip('[],"').split(','))
+  count = []
+  for key, val in counter.items():
+      if key.strip(" '") in search:
+          count.append(int(val))
+  return sum(count)    
 
 def trial_ranker(user_search):
   """
