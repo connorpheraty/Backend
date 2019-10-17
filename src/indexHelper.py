@@ -3,6 +3,7 @@ import math
 import re
 
 def indexDataFrame(df, token_array, stopwords):
+    """Indexes an array of tokens"""
     counter_lst = []
     for i in df[token_array]:
         temp_lst = []
@@ -16,6 +17,7 @@ def indexDataFrame(df, token_array, stopwords):
     return df
 
 def tokenizer(string):
+    """Tokenizes a given string"""
 
     tokenized_lst = string.split()
     tokenized_lst = [re.sub(r'[^\w\s]','',i) for i in tokenized_lst]
@@ -62,8 +64,10 @@ def score_docs(index, df, score=0):
         zero_lst = [x + y for x, y in zip(zero_lst, temp_lst)]
         df['score'] = zero_lst
 
+    df = df.drop(columns = ['tokens', 'term_freq'])
+
     df = df.sort_values('score', ascending=False)
 
-    df = df.head(20)
+    df = df.head(120)
 
     return df
