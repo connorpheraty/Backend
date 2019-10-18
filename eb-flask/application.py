@@ -6,8 +6,7 @@ from flask_cors import CORS
 import json
 
 #Local Imports
-from tokenize_lemmatize import tokenize_lemmatize
-from trial_ranker import trial_ranker
+
 
 # Elastic Beanstalk initalization
 application = app = Flask(__name__)
