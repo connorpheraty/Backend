@@ -1,7 +1,7 @@
 import math
 
 def search_freq(tokenized_search_terms, df, index=None, counter=0 ):
-    """Returns the number of times a search term is mentioned per document in a corpus of documents"""
+    """Returns the number of times a search term is mentioned per document within a corpus of documents"""
 
     for j in tokenized_search_terms:
 
