@@ -121,4 +121,7 @@ dmypy.json
 Data
 
 # Virtual Env
-eb-flask/virt
+src/virt
+
+# .ebextensions
+src/.ebextensions
