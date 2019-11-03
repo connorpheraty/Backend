@@ -117,8 +117,6 @@ dmypy.json
 .idea
 
 # Data
-/Data/
-Data
 
 # Virtual Env
 src/virt
