@@ -6,10 +6,10 @@ from flask_cors import CORS
 import json
 
 #Local Imports
-from dataFrameLoader import df
-from indexHelper import search_freq, score_docs, tokenizer
+from data.dataFrameLoader import df
+from dfParser import *
+from indexHelper import *
 
-# Elastic Beanstalk initalization
 application = app = Flask(__name__)
 FlaskJSON(app)
 cors = CORS(app)
@@ -39,137 +39,43 @@ def fetch_data_old():
                        official_title = sorted_df['official_title'], url = sorted_df['url'],
                        state=sorted_df['state'])
 
-@app.route('/fetch_data_1', methods=['POST'])
+@app.route('/fetch_search', methods=['POST'])
 def fetch_data():
   """
   API route that receives search query and returns clinical trials that match search
   """
   data = request.get_json(force=True)
 
-  user_search = data['user_search'] 
+  user_search = data['user_search']
+  page = data['page']
+  gender = data['gender']
+  age = data['age']
 
   sorted_df = score_docs(search_freq(tokenizer(user_search), df), df)
+  gendered_df = gender_parse(sorted_df, gender)
+  final_df = age_parse(gendered_df, age)
 
-  page = sorted_df[:12]  
+  total_results = len(final_df)
 
-  return page.to_json(orient='records')
+  start_ind, end_ind = paginate(page)
 
-@app.route('/fetch_data_2', methods=['POST'])
-def fetch_page2():
+  page = final_df[start_ind:end_ind]  
 
+  return json_response(total_results = total_results, results=page.to_json(orient='records'))
+
+@app.route('/fetch_result', methods=['POST'])
+def fetch_result():
+  """
+  Returns specified result based upon a studies ID
+  """
   data = request.get_json(force=True)
 
-  user_search = data['user_search'] 
+  trial_id = data['trial_id']
 
-  sorted_df = score_docs(search_freq(tokenizer(user_search), df), df)
+  spec_trial = df.loc[df.index == trial_id]
 
-  page = sorted_df[12:24]  
+  return spec_trial.to_json(orient='records')
 
-  return page.to_json(orient='records')
-
-@app.route('/fetch_data_3', methods=['POST'])
-def fetch_page3():
-
-  data = request.get_json(force=True)
-
-  user_search = data['user_search'] 
-
-  sorted_df = score_docs(search_freq(tokenizer(user_search), df), df)
-
-  page = sorted_df[24:36]  
-
-  return page.to_json(orient='records')
-
-@app.route('/fetch_data_4', methods=['POST'])
-def fetch_page4():
-
-  data = request.get_json(force=True)
-
-  user_search = data['user_search'] 
-
-  sorted_df = score_docs(search_freq(tokenizer(user_search), df), df)
-
-  page = sorted_df[36:48]  
-
-  return page.to_json(orient='records')
-
-@app.route('/fetch_data_5', methods=['POST'])
-def fetch_page5():
-
-  data = request.get_json(force=True)
-
-  user_search = data['user_search'] 
-
-  sorted_df = score_docs(search_freq(tokenizer(user_search), df), df)
-
-  page = sorted_df[48:60]  
-
-  return page.to_json(orient='records')
-
-@app.route('/fetch_data_6', methods=['POST'])
-def fetch_page6():
-
-  data = request.get_json(force=True)
-
-  user_search = data['user_search'] 
-
-  sorted_df = score_docs(search_freq(tokenizer(user_search), df), df)
-
-  page = sorted_df[60:72]  
-
-  return page.to_json(orient='records')
-
-@app.route('/fetch_data_7', methods=['POST'])
-def fetch_page7():
-
-  data = request.get_json(force=True)
-
-  user_search = data['user_search'] 
-
-  sorted_df = score_docs(search_freq(tokenizer(user_search), df), df)
-
-  page = sorted_df[72:84]  
-
-  return page.to_json(orient='records')
-
-@app.route('/fetch_data_8', methods=['POST'])
-def fetch_page8():
-
-  data = request.get_json(force=True)
-
-  user_search = data['user_search'] 
-
-  sorted_df = score_docs(search_freq(tokenizer(user_search), df), df)
-
-  page = sorted_df[84:96]  
-
-  return page.to_json(orient='records')
-
-@app.route('/fetch_data_9', methods=['POST'])
-def fetch_page9():
-
-  data = request.get_json(force=True)
-
-  user_search = data['user_search'] 
-
-  sorted_df = score_docs(search_freq(tokenizer(user_search), df), df)
-
-  page = sorted_df[96:108]  
-
-  return page.to_json(orient='records')
-
-@app.route('/fetch_data_10', methods=['POST'])
-def fetch_page10():
-
-  data = request.get_json(force=True)
-
-  user_search = data['user_search'] 
-
-  sorted_df = score_docs(search_freq(tokenizer(user_search), df), df)
-
-  page = sorted_df[108:120]  
-
-  return page.to_json(orient='records')
 
 if __name__ == '__main__':
     application.run()

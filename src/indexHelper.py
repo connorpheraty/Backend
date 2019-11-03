@@ -1,31 +1,4 @@
-from collections import Counter
 import math
-import re
-
-def indexDataFrame(df, token_array, stopwords):
-    """Indexes an array of tokens"""
-    counter_lst = []
-    for i in df[token_array]:
-        temp_lst = []
-        for j in i:
-            if j not in stopwords:
-                temp_lst.append(j)
-        temp_lst = Counter(temp_lst)
-        temp_lst = dict(temp_lst)
-        counter_lst.append(temp_lst)
-    df['term_freq'] = counter_lst
-    return df
-
-def tokenizer(string):
-    """Tokenizes a given string"""
-
-    tokenized_lst = string.split()
-    tokenized_lst = [re.sub(r'[^\w\s]','',i) for i in tokenized_lst]
-    tokenized_lst = [i.lower() for i in tokenized_lst]
-
-    return tokenized_lst
-
-
 
 def search_freq(tokenized_search_terms, df, index=None, counter=0 ):
     """Returns the number of times a search term is mentioned per document in a corpus of documents"""
@@ -68,6 +41,8 @@ def score_docs(index, df, score=0):
 
     df = df.sort_values('score', ascending=False)
 
-    df = df.head(120)
+    df = df.loc[df['score'] > 0]
 
     return df
+
+
