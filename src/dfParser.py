@@ -8,8 +8,8 @@ def gender_parse(df, gender):
 
 def age_parse(df, age):
     """Reduces dataframe according to age parameter"""
-    df = df[(df['min_age'] == np.nan) | (df['min_age'] < age)]
-    df = df[(df['max_age'] == np.nan) | (df['max_age'] > age)]
+    df = df[(df['min_age'] == None) | (df['min_age'] < age)]
+    df = df[(df['max_age'] == None) | (df['max_age'] > age)]
 
     return df
 
